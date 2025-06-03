@@ -1,6 +1,11 @@
 import React from "react";
 
-const Header = () => {
+
+interface HeaderProps {
+  setLoginModal: (value: boolean) => void;
+}
+
+const Header = ({setLoginModal}:HeaderProps) => {
   return (
     <header className="w-full bg-[#f7f8fc] border-t-2 mt-1 border-dotted border-red-500  text-sm font-medium">
       <div className="max-w-[1200px] mx-auto px-4 py-4 flex justify-between items-center">
@@ -33,7 +38,7 @@ const Header = () => {
         </div>
 
         {/* Right - Auth and Button */}
-        <div className="flex items-center space-x-6">
+        <div onClick={()=> setLoginModal(true)} className="flex items-center space-x-6">
           <span className="text-[#7c7b85] text-[16px] font-semibold cursor-pointer">
             Login / Sign Up
           </span>
