@@ -7,7 +7,7 @@ const Page = () => {
     <div className="min-h-screen">
       <div className="min-h-screen bg-[url('/banner-top.jpg')] bg-cover bg-no-repeat">
         <Header />
-        {/* <Herosection /> */}
+        <Herosection />
       </div>
     </div>
   );
