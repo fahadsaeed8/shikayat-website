@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import Header from "@/components/Header";
 import Herosection from "@/components/Herosection";
 import LoginModal from "@/components/modals/login-modal/login-modal";
 import React, { useState } from "react";
 
 const Page = () => {
-      const [loginModal, setLoginModal] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
 
   return (
     <div className="min-h-screen">
@@ -13,6 +13,7 @@ const Page = () => {
       <div className="min-h-screen bg-[url('/banner-top.jpg')] bg-cover bg-no-repeat">
         <Header setLoginModal={setLoginModal} />
         {/* <Herosection /> */}
+        <Herosection />
       </div>
     </div>
   );
