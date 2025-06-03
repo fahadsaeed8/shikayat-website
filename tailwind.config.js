@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "smooch-sans": ["var(--font-smooch-sans)", "sans-serif"],
+        metrophobic: ["Metrophobic", "sans-serif"], // ✅ Use CSS variable
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
