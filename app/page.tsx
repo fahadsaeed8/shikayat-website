@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Herosection from "@/components/Herosection";
 import LoginModal from "@/components/modals/login-modal/login-modal";
 import SlideCards from "@/components/SlideCards";
+import SolutionSection from "@/components/SolutionSection";
 import TalkAbout from "@/components/TalkAbout";
 import React, { useState } from "react";
 
@@ -46,10 +47,11 @@ const Page = () => {
         <Header setLoginModal={setLoginModal} />
         {/* <Herosection /> */}
         <Herosection />
-        <div className="p-6 pt-20 bg-[#f7f8fc] min-h-screen">
+        <div className="p-6 py-25 bg-[#f7f8fc]">
           <SlideCards cards={cards} />
         </div>{" "}
         <TalkAbout />
+        <SolutionSection />
       </div>
     </div>
   );
