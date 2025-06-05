@@ -1,4 +1,6 @@
 "use client";
+import Footer from "@/components/common/Footer";
+import ComplaintSection from "@/components/ComplaintSection";
 import Header from "@/components/Header";
 import Herosection from "@/components/Herosection";
 import LoginModal from "@/components/modals/login-modal/login-modal";
@@ -45,13 +47,14 @@ const Page = () => {
       <LoginModal loginModal={loginModal} setLoginModal={setLoginModal} />
       <div className="min-h-screen bg-[url('/banner-top.jpg')] bg-cover bg-no-repeat">
         <Header setLoginModal={setLoginModal} />
-        {/* <Herosection /> */}
         <Herosection />
         <div className="p-6 py-25 bg-[#f7f8fc]">
           <SlideCards cards={cards} />
         </div>{" "}
         <TalkAbout />
         <SolutionSection />
+        <ComplaintSection />
+        <Footer />
       </div>
     </div>
   );

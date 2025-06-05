@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
-const data = [
+const mockData = [
   {
     id: 1,
     name: "Signal",
-    logo: "/logos/signal.png",
+    logo: "/signal.png",
     score: 50,
     movement: "+2",
     movementType: "up",
@@ -14,7 +15,7 @@ const data = [
   {
     id: 2,
     name: "Parodontax",
-    logo: "/logos/parodontax.png",
+    logo: "/signal.png",
     score: 44,
     movement: "-1",
     movementType: "down",
@@ -22,7 +23,7 @@ const data = [
   {
     id: 3,
     name: "Sensodyne",
-    logo: "/logos/sensodyne.png",
+    logo: "/signal.png",
     score: 42,
     movement: "-1",
     movementType: "down",
@@ -30,7 +31,7 @@ const data = [
   {
     id: 4,
     name: "Colgate",
-    logo: "/logos/colgate.png",
+    logo: "/signal.png",
     score: 6,
     movement: "+1",
     movementType: "up",
@@ -38,17 +39,63 @@ const data = [
   {
     id: 5,
     name: "Oral-B",
-    logo: "/logos/oralb.png",
+    logo: "/signal.png",
     score: 5,
     movement: "-1",
+    movementType: "down",
+  },
+  {
+    id: 6,
+    name: "Pepsodent",
+    logo: "/signal.png",
+    score: 45,
+    movement: "+3",
+    movementType: "up",
+  },
+  {
+    id: 7,
+    name: "Close-Up",
+    logo: "/signal.png",
+    score: 30,
+    movement: "-2",
+    movementType: "down",
+  },
+  {
+    id: 8,
+    name: "Theramed",
+    logo: "/signal.png",
+    score: 29,
+    movement: "+1",
+    movementType: "up",
+  },
+  {
+    id: 9,
+    name: "Marvis",
+    logo: "/signal.png",
+    score: 60,
+    movement: "+4",
+    movementType: "up",
+  },
+  {
+    id: 10,
+    name: "Elmex",
+    logo: "/signal.png",
+    score: 32,
+    movement: "-3",
     movementType: "down",
   },
 ];
 
 export default function SolutionSection() {
+  const [visibleCount, setVisibleCount] = useState(5);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 3); // 3 more on each click
+  };
+
   return (
-    <main className="min-h-screen bg-[#2A2634] rounded-br-[50px] text-white py-10 px-4">
-      <h1 className="text-[42px] pt-10 font-semibold text-center mb-6">
+    <main className="min-h-screen bg-[#272635] rounded-br-[50px] text-white py-10 px-4">
+      <h1 className="text-[52px] tracking-[0.9] pt-10 font-semibold text-center mb-6">
         Solution Success
       </h1>
 
@@ -75,7 +122,7 @@ export default function SolutionSection() {
           </div>
         </div>
 
-        <button className="flex items-center gap-2 px-4 py-2  text-white text-sm rounded-md ">
+        <button className="flex items-center gap-2 px-4 py-2 bg-[#3B3847] text-white text-sm rounded-full">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
           Last 1 Year
         </button>
@@ -88,10 +135,10 @@ export default function SolutionSection() {
       </p>
 
       <div className="flex flex-col gap-4 max-w-2xl mx-auto">
-        {data.map((item, index) => (
+        {mockData.slice(0, visibleCount).map((item, index) => (
           <div
             key={item.id}
-            className={`flex items-center justify-between p-4  rounded-xl ${
+            className={`flex items-center justify-between p-4 rounded-xl ${
               item.movementType === "up" ? "bg-[#E7FAF2]" : "bg-[#FFE9EC]"
             }`}
           >
@@ -104,12 +151,12 @@ export default function SolutionSection() {
                 {item.movement}
                 <span>{item.movementType === "up" ? "↑" : "↓"}</span>
               </div>
-              <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-sm">
+              <div className="w-17 h-14 bg-white rounded-[14px] flex items-center justify-center shadow-sm">
                 <Image
                   src={item.logo}
                   alt={item.name}
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                   className="object-contain"
                 />
               </div>
@@ -117,12 +164,32 @@ export default function SolutionSection() {
                 {index + 1}. {item.name}
               </span>
             </div>
-            <div className="flex items-center gap-1 bg-[#F0F0F0] px-3 py-1 rounded-md text-black font-medium text-sm">
-              🔶 {item.score}/100
+            <div className="ml-auto flex items-center gap-1 bg-[#F0F0F0] px-3 py-1 rounded-md text-black font-bold text-sm">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4"
+                fill="#FFA500"
+                viewBox="0 0 24 24"
+              >
+                <path d="M12 .587l3.668 7.568L24 9.748l-6 5.982 1.416 8.27L12 19.771l-7.416 4.229L6 15.73 0 9.748l8.332-1.593z" />
+              </svg>
+              {item.score}
+              <span className="font-medium text-[10px]">/100</span>
             </div>
           </div>
         ))}
       </div>
+
+      {visibleCount < mockData.length && (
+        <div className="flex justify-center items-center">
+          <button
+            onClick={handleShowMore}
+            className="ml-4 px-16 py-4 mt-10 cursor-pointer text-sm border bg-transparent text-white rounded-full hover:bg-white hover:text-black font-semibold transition duration-200"
+          >
+            Show More
+          </button>
+        </div>
+      )}
     </main>
   );
 }
