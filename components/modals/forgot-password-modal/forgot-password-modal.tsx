@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import ReactModal from "@/components/common/react-modal/react-modal";
 import OTPModal from "../otp-modal/otp-modal";
 import { useState } from "react";
+import Image from "next/image";
 
 interface ForgotPasswordModalProps {
   forgotModal: boolean;
@@ -42,14 +43,20 @@ const ForgotPasswordModal = ({
   return (
     <>
       <ReactModal modalIsOpen={forgotModal} setIsOpen={setForgotModal}>
-        <div className="bg-white rounded-[30px] w-[50vw] flex overflow-hidden shadow-lg">
+        <div className="bg-white rounded-[0px] w-[50vw] flex overflow-hidden shadow-lg">
           {/* Left side */}
-          <div className="w-1/2 bg-[#CBD5F1] hidden md:flex items-center justify-center p-4">
-            <div className="text-sm text-gray-700">Forgot Password Graphic</div>
+          <div className="w-[30%] bg-[#CBD5F1] hidden md:flex items-center justify-center p-0">
+            <Image
+              src="/images/bg-pattern.png"
+              alt="Login Graphic"
+              width={508}
+              height={1256}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Right side */}
-          <div className="w-full md:w-1/2 bg-[#F7F7FA] p-8 relative">
+          <div className="w-full md:w-[70%] bg-[#F7F7FA] p-8 relative">
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 cursor-pointer hover:text-gray-700 transition"

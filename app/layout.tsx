@@ -3,12 +3,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Smooch_Sans } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/Topbar";
-import { Metrophobic } from 'next/font/google';
+import { Metrophobic } from "next/font/google";
 
 const metrophobic = Metrophobic({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-metrophobic',
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-metrophobic",
 });
 
 const geistMono = Geist_Mono({
@@ -39,12 +39,7 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         />
       </head>
-      <body
-        className={`font-metrophobic antialiased`}
-      >
-        <Topbar />
-        {children}
-      </body>
+      <body className={`font-metrophobic antialiased`}>{children}</body>
     </html>
   );
 }
