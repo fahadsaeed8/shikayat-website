@@ -136,7 +136,7 @@ export default function Footer() {
                 "McKinley",
                 "TCL Television",
                 "H&M",
-                "OKX",
+                "OLX",
               ],
             },
             {
@@ -213,12 +213,46 @@ export default function Footer() {
               Evaluation Guide
             </a>
           </div>
-          <div className="flex items-center gap-2">
-            <select className="bg-gray-800 text-white text-xs p-1 rounded">
-              <option>🇹🇷 Türkiye</option>
-            </select>
+          <div className="flex items-center gap-4">
+            <div className="relative">
+              <select className="bg-gray-800 text-white text-xs pl-10 pr-8 py-2 rounded-full appearance-none focus:outline-none">
+                <option>Türkiye</option>
+              </select>
+              <span className="absolute left-2 top-1/2 transform -translate-y-1/2 w-5 h-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 480"
+                  className="w-full h-full"
+                >
+                  <g fillRule="evenodd">
+                    <path fill="#e30a17" d="M0 0h640v480H0z" />
+                    <path
+                      fill="#fff"
+                      d="M250.3 240a75 75 0 1 0 0-120 90 90 0 1 1 0 120zm95.7-60l60.8 19.6-37.8 53.4.1-65.4-60.9 19.4z"
+                    />
+                  </g>
+                </svg>
+              </span>
+
+              <svg
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
             <p className="text-gray-500">© 2025</p>
-            <span className="text-white font-bold">SiteName</span>
+            <span className="text-white font-bold">
+              Shikayat. All rights reserved.
+            </span>
           </div>
         </div>
       </div>
