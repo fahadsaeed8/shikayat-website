@@ -7,6 +7,7 @@ import {
   CheckCircle,
   EyeOff,
   GanttChartSquare,
+  Goal,
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -17,6 +18,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import ForgotPasswordModal from "../forgot-password-modal/forgot-password-modal";
 import SignupModal from "../sign-up-modal/sign-up-modal";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 interface LoginModalProps {
   loginModal: boolean;
@@ -83,7 +86,7 @@ const LoginModal = ({ loginModal, setLoginModal }: LoginModalProps) => {
                 <span
                   onClick={() => {
                     setSignupModal(true);
-                    setLoginModal(false);
+                    // setLoginModal(false);
                   }}
                   className="font-semibold cursor-pointer underline text-gray-700"
                 >
@@ -94,11 +97,18 @@ const LoginModal = ({ loginModal, setLoginModal }: LoginModalProps) => {
               {/* Social Buttons */}
               <div className="flex w-full gap-4">
                 <button className="flex items-center justify-center gap-2 bg-[#3b5998] text-white px-4 py-2 rounded-full w-full text-sm font-medium cursor-pointer">
-                  <Facebook className="w-4 h-4" />
+                  {/* <Facebook className="w-4 h-4" /> */}
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className="text-white text-2xl"
+                  />{" "}
                   Login with Facebook
                 </button>
                 <button className="flex items-center justify-center gap-2 bg-[#EA4335] text-white px-4 py-2 rounded-full w-full text-sm font-medium cursor-pointer">
-                  <GanttChartSquare className="w-4 h-4" />
+                  <FontAwesomeIcon
+                    icon={faGoogle}
+                    className="text-white text-xl"
+                  />{" "}
                   Sign in with Google
                 </button>
               </div>

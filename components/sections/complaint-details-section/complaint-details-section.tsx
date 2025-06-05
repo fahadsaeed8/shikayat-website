@@ -1,3 +1,4 @@
+import { Mic } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
 
 interface ComplaintDetailsSectionProps {
@@ -81,12 +82,13 @@ const ComplaintDetailsSection: React.FC<ComplaintDetailsSectionProps> = ({
       {/* Textarea Section */}
       <div className={`relative ${error ? "mb-0" : "mb-6"}`}>
         <textarea
-          className="w-full border rounded-xl p-6 text-sm text-gray-700 resize-none h-[160px]"
+          className="w-full rounded-xl p-6 text-sm text-gray-700 resize-none h-[160px] border outline-none"
           placeholder="What problem did you experience with the product or service?"
           value={complaintDetail}
           onChange={(e) => setComplaintDetail(e.target.value)}
         />
-        <span className="absolute bottom-4 right-4 text-gray-400">🎙️</span>
+        <Mic className="absolute bottom-4 right-4 text-gray-400 cursor-pointer" />
+        {/* <span className="absolute bottom-4 right-4 text-gray-400">🎙️</span> */}
       </div>
 
       {/* Error Message */}
@@ -99,7 +101,7 @@ const ComplaintDetailsSection: React.FC<ComplaintDetailsSectionProps> = ({
       >
         <button
           type="button"
-          className="bg-[#7B5CFA] text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#684ae5]"
+          className="bg-[#7B5CFA] text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-[#684ae5] cursor-pointer"
           onClick={(e) => e.preventDefault()}
         >
           ➕ Add Image
@@ -135,7 +137,7 @@ const ComplaintDetailsSection: React.FC<ComplaintDetailsSectionProps> = ({
               )}
               <button
                 onClick={() => handleRemoveFile(index)}
-                className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 aspect-square w-6 h-6 flex items-center justify-center hover:bg-red-600"
+                className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 aspect-square w-6 h-6 flex items-center justify-center hover:bg-red-600 cursor-pointer"
                 title="Remove image"
                 type="button"
               >
@@ -149,7 +151,8 @@ const ComplaintDetailsSection: React.FC<ComplaintDetailsSectionProps> = ({
       {/* Continue Button */}
       <div className="flex justify-end">
         <button
-          className="bg-[#c3ffe3] text-[#00836b] px-8 py-2 rounded-full font-semibold hover:bg-[#a8fbd7]"
+          type="button"
+          className="bg-[#c3ffe3] text-[#00836b] px-8 py-2 rounded-full font-semibold hover:bg-[#a8fbd7] cursor-pointer"
           onClick={handleContinue}
         >
           Continue

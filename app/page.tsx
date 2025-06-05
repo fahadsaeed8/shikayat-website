@@ -46,7 +46,7 @@ const Page = () => {
   return (
     <>
       <Topbar />
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[#f7f8fc]">
         <LoginModal loginModal={loginModal} setLoginModal={setLoginModal} />
         <div className="min-h-screen bg-[url('/banner-top.jpg')] bg-cover bg-no-repeat">
           <Header setLoginModal={setLoginModal} />

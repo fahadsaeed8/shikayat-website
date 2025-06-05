@@ -6,6 +6,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ReactModal from "@/components/common/react-modal/react-modal";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 interface SignupModalProps {
   signupModal: boolean;
@@ -42,7 +44,7 @@ const SignupModal = ({
 
   return (
     <ReactModal modalIsOpen={signupModal} setIsOpen={setSignupModal}>
-      <div className="bg-white rounded-[0px] w-[750vw] flex overflow-hidden shadow-lg">
+      <div className="bg-white rounded-[0px] w-[750px] flex overflow-hidden shadow-lg">
         {/* Left side */}
         <div className="w-[30%] bg-[#CBD5F1] hidden md:flex items-center justify-center p-0">
           <Image
@@ -71,10 +73,18 @@ const SignupModal = ({
             </h2>
 
             <button className="flex items-center justify-center w-full bg-blue-700 text-white py-2 rounded-full hover:bg-blue-800 transition cursor-pointer">
-              <span className="mr-2">📘</span> Sign up with Facebook
+              <FontAwesomeIcon
+                icon={faFacebook}
+                className="text-white text-lg mr-2"
+              />{" "}
+              Sign up with Facebook
             </button>
             <button className="flex items-center justify-center w-full bg-red-500 text-white py-2 rounded-full hover:bg-red-600 transition cursor-pointer">
-              <span className="mr-2">🟥</span> Sign up with Google
+              <FontAwesomeIcon
+                icon={faGoogle}
+                className="text-white text-lg mr-2"
+              />{" "}
+              Sign up with Google
             </button>
 
             <div className="w-full border-t border-gray-300 my-4" />

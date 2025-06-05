@@ -112,16 +112,16 @@ export default function StepBrandFormSection({
       {/* Buttons */}
       <div className="flex justify-between">
         <button
-          className="bg-gray-300 text-gray-700 px-8 py-2 rounded-full font-semibold hover:bg-gray-400"
+          className="bg-gray-300 text-gray-700 px-8 py-2 rounded-full font-semibold hover:bg-gray-400 cursor-pointer"
           onClick={onBack}
         >
           Go Back
         </button>
         <button
-          className="bg-[#2ee4a6] text-white px-8 py-2 rounded-full font-semibold hover:bg-[#22c29e]"
+          className="bg-[#2ee4a6] text-white px-8 py-2 rounded-full font-semibold hover:bg-[#22c29e] cursor-pointer"
           onClick={handleSubmit}
         >
-          Devam Et
+          Continue
         </button>
       </div>
     </div>
