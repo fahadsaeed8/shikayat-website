@@ -1,13 +1,14 @@
+import { useRouter } from "next/navigation";
 import React from "react";
-
 
 interface HeaderProps {
   setLoginModal: (value: boolean) => void;
 }
 
-const Header = ({setLoginModal}:HeaderProps) => {
+const Header = ({ setLoginModal }: HeaderProps) => {
+  const router = useRouter();
   return (
-    <header className="w-full bg-[#f7f8fc] border-t-2 mt-1 border-dotted border-red-500  text-sm font-medium">
+    <header className="w-full bg-transparent border-t-2 mt-1 border-dotted border-red-500  text-sm font-medium relative z-10">
       <div className="max-w-[1200px] mx-auto px-4 py-4 flex justify-between items-center">
         {/* Left - Logo and Menu */}
         <div className="flex items-center space-x-6">
@@ -38,12 +39,21 @@ const Header = ({setLoginModal}:HeaderProps) => {
         </div>
 
         {/* Right - Auth and Button */}
-        <div onClick={()=> setLoginModal(true)} className="flex items-center space-x-6">
-          <span className="text-[#7c7b85] text-[16px] font-semibold cursor-pointer">
+        <div className="flex items-center space-x-6">
+          <span
+            onClick={() => setLoginModal(true)}
+            className="text-[#7c7b85] text-[16px] font-semibold cursor-pointer"
+          >
             Login / Sign Up
           </span>
-          <div className="border-2 border-dotted border-red-500 rounded-full p-[2px]">
-            <button className="bg-[#5a28ff] text-white text-[16px] font-semibold px-4 py-[6px] rounded-full ">
+          <div
+            onClick={() => router.push("/complaint-method")}
+            className="border-2 border-dotted border-red-500 rounded-full p-[2px] cursor-pointer"
+          >
+            <button
+              type="button"
+              className="bg-[#5a28ff] text-white text-[16px] font-semibold px-4 py-[6px] rounded-full flex justify-center items-center gap-[6px] cursor-pointer"
+            >
               <span className="text-[24px] mr-1">+</span> Write a Complaint
             </button>
           </div>
