@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 
 const Herosection = () => {
   return (
-    <div className="relative min-h-screen bg-[#f7f8fc] flex px-12 gap-8">
+    <div className="relative min-h-screen bg-[#f7f8fc] flex px-12 gap-4">
       {/* Left Column */}
       <div className="w-1/2 pt-[130px] px-[110px] flex flex-col justify-between">
         {/* Top Heading */}
@@ -27,7 +27,7 @@ const Herosection = () => {
       </div>
 
       {/* Right Column - Image */}
-      <div className="w-1/2 relative flex items-end justify-end">
+      <div className="w-1/2 relative flex items-start justify-start overflow-hidden mt-[-100px]">
         <Image
           src="/sv-banner.png"
           alt="Hero Banner"

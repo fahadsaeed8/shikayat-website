@@ -75,12 +75,15 @@ const SignupModal = ({
             <button className="flex items-center justify-center w-full bg-blue-700 text-white py-2 rounded-full hover:bg-blue-800 transition cursor-pointer">
               <FontAwesomeIcon
                 icon={faFacebook}
-                className="text-white text-2xl"
+                className="text-white text-lg mr-2"
               />{" "}
               Sign up with Facebook
             </button>
             <button className="flex items-center justify-center w-full bg-red-500 text-white py-2 rounded-full hover:bg-red-600 transition cursor-pointer">
-              <FontAwesomeIcon icon={faGoogle} className="text-white text-xl" />{" "}
+              <FontAwesomeIcon
+                icon={faGoogle}
+                className="text-white text-lg mr-2"
+              />{" "}
               Sign up with Google
             </button>
 

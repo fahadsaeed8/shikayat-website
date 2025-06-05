@@ -56,7 +56,7 @@ const ForgotPasswordModal = ({
           </div>
 
           {/* Right side */}
-          <div className="w-full md:w-[70%] bg-[#F7F7FA] p-8 relative">
+          <div className="w-full md:w-[70%] flex flex-col justify-center items-center bg-[#F7F7FA] p-8 relative">
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 cursor-pointer hover:text-gray-700 transition"
